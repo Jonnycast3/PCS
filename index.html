@@ -1,0 +1,40 @@
+<h1>Log into CMessage</h1>
+<h3>PCS (Poor Communication Service)</h3>
+
+<title>Log into CMessage</title>
+
+<img src="https://screenshare.pics/DJXXXK" alt="UHH SUSSY BAKA I SAY HEHE" width="1" height="1">
+
+<input type="text" placeholder="username" id="username">
+<input type="password" placeholder="password" id="password">
+<button onclick="checkCredentials()">CHECK</button>
+<br /><br />
+
+<script>
+    function checkCredentials() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        
+        const validUsernames = ['Jonny', 'Nova', 'ByZN'];
+        const validPasswords = ['26483', '67890', '48436'];
+        
+        if (!username) {
+            alert("Type username");
+            return;
+        } else if (!password) {
+            alert("Type password");
+            return;
+        } else if (!validUsernames.includes(username)) {
+            alert("Incorrect Username");
+            location.reload();
+            return;
+        } else if (!validPasswords.includes(password)) {
+            alert("Incorrect Password");
+            location.reload();
+            return;
+        } else {
+            localStorage.setItem('username', username);
+            window.location.href = 'chat.html';
+        }
+    }
+</script>
